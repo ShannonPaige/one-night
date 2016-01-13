@@ -1,1 +1,5 @@
-<%= @locations %>
+<ul>
+<% @locations.each do |location| %>
+  <li><%= location.businesses.first.name %></li>
+<% end %>
+</ul>

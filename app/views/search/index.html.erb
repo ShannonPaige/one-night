@@ -1,9 +1,15 @@
 <h1>Let's Get Started</h1>
 
  <%= form_tag(locations_path, method: "get") do %>
-  <%= check_box_tag(:bars) %>
-  <%= label_tag(:bars, "Bars") %>
-  <%= check_box_tag(:restaurants) %>
-  <%= label_tag(:estaurants, "Restaurants") %>
+  <%=check_box_tag 'location_categories[bars]'%>
+  <%= label_tag('location_categories[bars]', "Bars") %>
+  <%=check_box_tag 'location_categories[cannabis_clinics]'%>
+  <%= label_tag('location_categories[cannabis_clinics]', "Dispenseries") %>
+  <%=check_box_tag 'location_categories[hotels]'%>
+  <%= label_tag('location_categories[hotels]', "Hotels") %>
+  <%=check_box_tag 'location_categories[museums]'%>
+  <%= label_tag('location_categories[museums]', "Museums") %>
+  <%=check_box_tag 'location_categories[restaurants]'%>
+  <%= label_tag('location_categories[restaurants]', "Restaurants") %>
   <%= submit_tag("Search") %>
 <% end %>
