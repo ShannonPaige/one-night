@@ -1,0 +1,9 @@
+<h1>Let's Get Started</h1>
+
+ <%= form_tag(locations_path, method: "get") do %>
+  <%= check_box_tag(:bars) %>
+  <%= label_tag(:bars, "Bars") %>
+  <%= check_box_tag(:restaurants) %>
+  <%= label_tag(:estaurants, "Restaurants") %>
+  <%= submit_tag("Search") %>
+<% end %>

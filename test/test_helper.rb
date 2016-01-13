@@ -25,11 +25,11 @@ class ActionDispatch::IntegrationTest
 
   def setup
     Capybara.app = OneNight::Application
+    OmniAuth.config.test_mode = true
     stub_omniauth
   end
 
   def stub_omniauth
-    OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
       provider: 'twitter',
       extra: {
@@ -46,7 +46,18 @@ class ActionDispatch::IntegrationTest
     })
   end
 
+  def create_user
+    stub_omniauth
+    user = stub(:name => "Shannon",
+                :screen_name => "spaige",
+                :uid => 1234,
+                :oauth_token => "pizza",
+                :oauth_token_secret => "secretpizza")
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
+  end
+
   def teardown
+    OmniAuth.config.mock_auth[:twitter] = nil
     reset_session!
   end
 

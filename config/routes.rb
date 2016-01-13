@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'search/index'
+
+  get 'locations/index'
+
   get 'user/show'
 
   get 'sessions/create'
@@ -9,5 +13,7 @@ Rails.application.routes.draw do
   get 'auth/twitter/callback', to: 'sessions#create'
   get 'logout',                to: 'sessions#destroy', as: :logout
 
-  resources :users,     only: [:show]
+  resources :users,         only: [:show]
+  resources :locations,     only: [:index]
+  get 'search', to: "search#index"
 end
