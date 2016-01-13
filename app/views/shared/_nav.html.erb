@@ -24,7 +24,12 @@
       <li class="divider-vertical"></li>
       <li><a href="#">Frequently Asked <span class="text-uppercase">Questions</span></a></li>
       <li class="divider-vertical"></li>
-      <li><a href="#">Login</a></li>
+      <li>
+        <% if current_user %>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 

@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
 gem "omniauth-twitter"
 gem "database_cleaner"
-gem "twitter"
+# gem "twitter"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
@@ -43,7 +44,7 @@ group :development, :test do
   gem "mocha"
   gem "simplecov"
   gem 'better_errors'
-  gem 'webmock'
+  #gem 'webmock'
   gem 'vcr'
 end
 
@@ -58,5 +59,4 @@ end
 group :production do
   # Good error messages in the log
   gem 'rails_12factor'
-  gem 'figaro'
 end
