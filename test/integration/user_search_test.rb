@@ -17,7 +17,12 @@ class UserSearchTest < ActionDispatch::IntegrationTest
   end
 
   test "user can submit all the fields of the form and get a results page" do
-    
+    create_user
+    visit '/search'
+    check 'location_categories[bars]'
+    click "Find Your Night"
+
+    assert_equal locations_path, current_path
   end
 
 end

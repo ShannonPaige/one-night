@@ -1,5 +1,6 @@
 <ul>
-<% @locations.each do |location| %>
-  <li><%= location.businesses.first.name %></li>
+<% @locations.each do |category, location| %>
+  <li>
+    <%= "#{category}: " %><%= location.name %></li>
 <% end %>
 </ul>
