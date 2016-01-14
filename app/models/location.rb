@@ -18,4 +18,8 @@ class Location
     locations
   end
 
+  def self.yelp_image_name(location)
+    location.image_url.gsub('ms.jpg', 'o.jpg')
+  end
+
 end

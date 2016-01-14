@@ -6,7 +6,7 @@
         <% if category == :Event %>
           <img src="<%= location["logo"]["url"] %>" alt="<%= location["name"]["text"] %>">
         <% else %>
-          <img src="<%= location.image_url %>" alt="<%= location.name %>">
+          <img src="<%= Location.yelp_image_name(location) %>" alt="<%= location.name %>">
         <% end %>
         <div class="caption">
           <% if category == :Event %>
