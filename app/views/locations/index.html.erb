@@ -1,29 +1,32 @@
 <h2>Search Results</h2>
-<div class="row">
-  <% @locations.each_with_index do |(category, location), index| %>
-    <div class="col-md-2">
-      <div class="thumbnail">
-        <% if category == :Event %>
-          <img src="<%= location["logo"]["url"] %>" alt="<%= location["name"]["text"] %>">
-        <% else %>
-          <img src="<%= Location.yelp_image_name(location) %>" alt="<%= location.name %>">
-        <% end %>
-        <div class="caption">
+<% @locations.each_with_index do |(category, location), index| %>
+  <% if index == 0 || index == 3 %>
+    <div class="row">
+  <% end %>
+      <div class="col-md-4">
+        <div class="thumbnail">
           <% if category == :Event %>
-            <h5>Event:</h5>
-            <h4><%= location["name"]["text"] %></h4>
-
-            <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a></p>
-            <p><a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+            <img src="<%= location["logo"]["url"] %>" alt="<%= location["name"]["text"] %>">
           <% else %>
-            <h5><%= "#{category}:" %></h5>
-            <h4><%= location.name %></h4>
-            <p><%= location.location.display_address.first %></p>
-            <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a></p>
-            <p><a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+            <img src="<%= Location.yelp_image_name(location) %>" alt="<%= location.name %>">
           <% end %>
+          <div class="caption">
+            <% if category == :Event %>
+              <h5>Event:</h5>
+              <h4><%= location["name"]["text"] %></h4>
+              <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a>
+              <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+            <% else %>
+              <h5><%= "#{category}:" %></h5>
+              <h4><%= location.name %></h4>
+              <p><%= location.location.display_address.first %></p>
+              <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a>
+              <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+            <% end %>
+          </div>
         </div>
       </div>
+  <% if index == 2 || index == (@locations.count-1) %>
     </div>
   <% end %>
-</div>
+<% end %>
