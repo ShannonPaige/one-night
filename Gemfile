@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'yelp', require: 'yelp'
 gem 'eventbrite_api_client'
+gem "skylight"
 gem 'figaro'
 gem "omniauth-twitter"
 gem "database_cleaner"
