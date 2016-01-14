@@ -20,7 +20,7 @@ class UserSearchTest < ActionDispatch::IntegrationTest
     create_user
     visit '/search'
     check 'location_categories[bars]'
-    click "Find Your Night"
+    click_button "Find Your Night"
 
     assert_equal locations_path, current_path
   end
