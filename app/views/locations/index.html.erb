@@ -1,6 +1,10 @@
 <ul>
 <% @locations.each do |category, location| %>
   <li>
-    <%= "#{category}: " %><%= location.name %></li>
+    <% if category == :Event %>
+        <%= "Event: " %><%= location["name"]["text"] %></li>
+    <% else %>
+      <%= "#{category}: " %><%= location.name %></li>
+    <% end %>
 <% end %>
 </ul>

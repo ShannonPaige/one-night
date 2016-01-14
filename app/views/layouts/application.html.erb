@@ -10,7 +10,13 @@
 <body>
 <div class="container">
   <%= render "shared/nav" %>
+
+  <% flash.each do |type, msg| %>
+    <%= content_tag :div, msg.html_safe %>
+  <% end %>
+
   <%= yield %>
+  
   <%= render "shared/footer" %>
 </div>
 
