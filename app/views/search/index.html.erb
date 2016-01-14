@@ -1,17 +1,21 @@
 <h1>Let's Get Started</h1>
-
- <%= form_tag(locations_path, method: "get") do %>
-  <%=check_box_tag 'location_categories[bars]'%>
-  <%= label_tag('location_categories[bars]', "Bars") %>
-  <%=check_box_tag 'location_categories[cannabis_clinics]'%>
-  <%= label_tag('location_categories[cannabis_clinics]', "Cannabis Clinics") %>
-  <%=check_box_tag 'location_categories[events]'%>
-  <%= label_tag('location_categories[events]', "Events") %>
-  <%=check_box_tag 'location_categories[hotels]'%>
-  <%= label_tag('location_categories[hotels]', "Hotels") %>
-  <%=check_box_tag 'location_categories[museums]'%>
-  <%= label_tag('location_categories[museums]', "Museums") %>
-  <%=check_box_tag 'location_categories[restaurants]'%>
-  <%= label_tag('location_categories[restaurants]', "Restaurants") %>
-  <%= submit_tag("Find Your Night") %>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h3>What are you looking for?</h3>
+    <%= form_tag(locations_path, method: "get") do %>
+      <%=check_box_tag 'location_categories[bars]'%>
+      <%= label_tag('location_categories[bars]', "Bars") %><br />
+      <%=check_box_tag 'location_categories[cannabis_clinics]'%>
+      <%= label_tag('location_categories[cannabis_clinics]', "Cannabis Clinics") %><br />
+      <%=check_box_tag 'location_categories[events]'%>
+      <%= label_tag('location_categories[events]', "Events") %><br />
+      <%=check_box_tag 'location_categories[hotels]'%>
+      <%= label_tag('location_categories[hotels]', "Hotels") %><br />
+      <%=check_box_tag 'location_categories[museums]'%>
+      <%= label_tag('location_categories[museums]', "Museums") %><br />
+      <%=check_box_tag 'location_categories[restaurants]'%>
+      <%= label_tag('location_categories[restaurants]', "Restaurants") %><br />
+      <%= submit_tag("Find Your Night") %>
+    <% end %>
+  </div>
+</div>

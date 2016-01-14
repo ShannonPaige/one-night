@@ -16,17 +16,12 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Where To <br /><span class="text-uppercase">Buy</span></a></li>
-      <li class="divider-vertical"></li>
-      <li><a href="#">Where To <br /><span class="text-uppercase">Eat</span></a></li>
-      <li class="divider-vertical"></li>
-      <li><a href="#">What to <br /><span class="text-uppercase">Do</span></a></li>
-      <li class="divider-vertical"></li>
-      <li><a href="#">Frequently Asked <span class="text-uppercase">Questions</span></a></li>
-      <li class="divider-vertical"></li>
       <li>
         <% if current_user %>
-          <%= link_to "Logout", logout_path %>
+          <li><a href="#">Your <br /><span class="text-uppercase">Profile</span></a></li>
+          <li class="divider-vertical"></li>
+          <li><a href="/logout">Logout</a></li>
+          <%#= link_to "Logout", logout_path %>
         <% else %>
           <%= link_to "Login", login_path %>
         <% end %></li>
