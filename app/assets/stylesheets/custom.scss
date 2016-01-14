@@ -1,8 +1,7 @@
 
 
 body {
-  /*background-image: url("http://i.imgur.com/p8Dzig5.jpg");*/
-  background-image: image-url("marijuana.jpg");
+  background-image: image-url("background.jpg");
 
   height: 45rem;
   background-size: cover;
@@ -53,6 +52,25 @@ padding: 0px
 color: white;
 font-family: 'Lobster', cursive;
 }
+
+.thumbnail > img {
+    width: 150px;
+    height: 150px;
+}
+
+// .thumbnail.right-caption > img {
+//     float: left;
+//     margin-right: 9px;
+// }
+//
+// .thumbnail.right-caption {
+//     float: left;
+//    min-height: 220px !important;
+// }
+//
+// .thumbnail.right-caption > .caption {
+//     padding: 4px;
+// }
 
 /* Sticky footer styles
 -------------------------------------------------- */
