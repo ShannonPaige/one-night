@@ -58,6 +58,11 @@ font-family: 'Lobster', cursive;
     height: 250px;
 }
 
+.category_card {
+  height: 500px !important;
+  // overflow: scroll;
+}
+
 // .thumbnail.right-caption > img {
 //     float: left;
 //     margin-right: 9px;

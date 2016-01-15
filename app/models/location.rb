@@ -22,4 +22,8 @@ class Location
     location.image_url.gsub('ms.jpg', 'o.jpg')
   end
 
+  def self.address(location)
+    location.location.display_address.first
+  end
+
 end

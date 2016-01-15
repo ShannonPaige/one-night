@@ -1,0 +1,23 @@
+<div class="col-md-4 category_card">
+  <div class="thumbnail">
+    <% if Category.event?(category) %>
+      <img src="<%= location["logo"]["url"] %>" alt="<%= location["name"]["text"] %>">
+    <% else %>
+      <img src="<%= Location.yelp_image_name(location) %>" alt="<%= location.name %>">
+    <% end %>
+    <div class="caption">
+      <% if Category.event?(category) %>
+        <h5>Event:</h5>
+        <h4><%= truncate(location["name"]["text"], length: 40) %></h4>
+        <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a>
+        <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+      <% else %>
+        <h5><%= "#{category}:" %></h5>
+        <h4><%= truncate(location.name, length: 40) %></h4>
+        <p><%= Location.address(location) %></p>
+        <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a>
+        <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+      <% end %>
+    </div>
+  </div>
+</div>
