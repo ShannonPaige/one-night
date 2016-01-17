@@ -3,15 +3,15 @@ class Location
   def self.find_locations(categories, address, distance)
     locations = {}
     address = Location.default_addess(address)
+    distance_in_meters = Location.miles_to_meters(distance)
     categories.each do |category, v|
       if category == "events"
         locations[:Event] = Event.find_event(address, distance)
       else
-        distance = Location.miles_to_meters(distance)
         readable_category = category.split("_").map(&:capitalize).join(" ").singularize
         locations[readable_category] = Yelp.client.
                                             search(address, { category_filter: category,
-                                                              limit: 20, radius_filter: distance}).
+                                                              limit: 20, radius_filter: distance_in_meters}).
                                             businesses.shuffle.first
       end
     end

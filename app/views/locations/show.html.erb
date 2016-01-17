@@ -1,12 +1,5 @@
-<h2><%= @location.name %></h2>
-<div class="row">
-  <div class="col-md-4 category_card">
-    <div class="thumbnail">
-      <img src="<%= Location.yelp_image_name(@location) %>" alt="<%= @location.name %>">
-      <div class="caption">
-          <p><%= Location.address(@location) %></p>
-        <p><a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+<% if Category.event?(@category) %>
+  <%= render partial: "event_detail_card" %>
+<% else %>
+  <%= render partial: "yelp_detail_card" %>
+<% end %>

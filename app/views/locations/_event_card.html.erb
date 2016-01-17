@@ -1,0 +1,7 @@
+<img src="<%= location["logo"]["url"] %>" alt="<%= location["name"]["text"] %>">
+<div class="caption">
+  <h5>Event:</h5>
+  <h4><%= truncate(location["name"]["text"], length: 40) %></h4>
+  <p><%= link_to 'Learn More', location_path(id: location["id"], category: "Event"), {class: "btn btn-primary btn-xs"} %>
+  <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+</div>

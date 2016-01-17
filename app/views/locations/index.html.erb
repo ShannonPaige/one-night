@@ -1,6 +1,14 @@
 <h2>Search Results</h2>
 <div class="row">
-  <% @locations.each_with_index do |(category, location), index| %>
-  <%= render partial: "category_card", locals: {category: category, location: location} %>
+  <% @locations.each do |category, location| %>
+    <div class="col-md-4 category_card">
+      <div class="thumbnail">
+        <% if Category.event?(category) %>
+          <%= render partial: "event_card", locals: {location: location} %>
+        <% else %>
+          <%= render partial: "yelp_card", locals: {category: category, location: location} %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>

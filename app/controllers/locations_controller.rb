@@ -8,6 +8,7 @@ class LocationsController < ApplicationController
     end
 
     def show
+      @category = params[:category]
       @location = Location.find_location(params[:id])
     end
   end
