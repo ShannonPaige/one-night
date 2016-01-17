@@ -6,6 +6,10 @@ class LocationsController < ApplicationController
       flash[:error] = "You must choose at least one category."
       redirect_to search_path
     end
+
+    def show
+      @location = Location.find_location(params[:id])
+    end
   end
 
   private

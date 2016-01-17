@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get 'logout',                 to: 'sessions#destroy', as: :logout
   get 'profile',                to: 'users#show'
   get 'search',                 to: "search#index"
-  resources :locations,         only: [:index]
+  resources :locations,         only: [:index, :show]
 end

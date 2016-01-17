@@ -10,14 +10,16 @@ class Location
         distance = Location.miles_to_meters(distance)
         readable_category = category.split("_").map(&:capitalize).join(" ").singularize
         locations[readable_category] = Yelp.client.
-                                            search(address, {category_filter: category,
-                                                                limit: 20, radius_filter: distance}).
-                                            businesses.
-                                            shuffle.
-                                            first
+                                            search(address, { category_filter: category,
+                                                              limit: 20, radius_filter: distance}).
+                                            businesses.shuffle.first
       end
     end
     locations
+  end
+
+  def self.find_location(id)
+    Yelp.client.business(id).business
   end
 
   def self.yelp_image_name(location)

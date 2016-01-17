@@ -9,15 +9,13 @@
       <% if Category.event?(category) %>
         <h5>Event:</h5>
         <h4><%= truncate(location["name"]["text"], length: 40) %></h4>
-        <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a>
-        <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
       <% else %>
         <h5><%= "#{category}:" %></h5>
         <h4><%= truncate(location.name, length: 40) %></h4>
         <p><%= Location.address(location) %></p>
-        <p><a href="#" class="btn btn-primary btn-xs" role="button">Learn More</a>
-        <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
       <% end %>
+      <p><%= button_to 'Learn More', location_path(location.id), {method: 'get', class: "btn btn-primary btn-xs"} %>
+      <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
     </div>
   </div>
 </div>
