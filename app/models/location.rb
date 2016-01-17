@@ -6,20 +6,17 @@ class Location
     distance_in_meters = Location.miles_to_meters(distance)
     categories.each do |category, v|
       if category == "events"
-        locations[:Event] = Event.find_event(address, distance)
+        locations[:Event] = EventbriteService.new.find_event(address, distance)
       else
         readable_category = category.split("_").map(&:capitalize).join(" ").singularize
-        locations[readable_category] = Yelp.client.
-                                            search(address, { category_filter: category,
-                                                              limit: 20, radius_filter: distance_in_meters}).
-                                            businesses.shuffle.first
+        locations[readable_category] = YelpService.new.find_location(category, address, distance_in_meters)
       end
     end
     locations
   end
 
   def self.find_location(id)
-    Yelp.client.business(id).business
+    @yelp_connection.client.business(id).business
   end
 
   def self.yelp_image_name(location)
