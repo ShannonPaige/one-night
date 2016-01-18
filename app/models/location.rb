@@ -15,8 +15,8 @@ class Location
     locations
   end
 
-  def self.find_location(id)
-    @yelp_connection.client.business(id).business
+  def self.location_details(id)
+    YelpService.new.location_details(id)
   end
 
   def self.yelp_image_name(location)

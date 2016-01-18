@@ -3,6 +3,6 @@
   <h5><%= "#{category}:" %></h5>
   <h4><%= truncate(location.name, length: 40) %></h4>
   <p><%= Location.address(location) %></p>
-  <p><%= link_to 'Learn More', location_path(id: location.id, category: category), {class: "btn btn-primary btn-xs"} %>
-  <a href="#" class="btn btn-primary btn-xs" role="button">Save to Faves</a></p>
+  <%= link_to 'Learn More', location_path(id: location.id, category: category), {class: "btn btn-primary btn-xs"} %>
+  <%= button_to "Save to Faves", favorites_path(id: location.id, category: category), {class: "btn btn-primary btn-xs"}  %>
 </div>

@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+  before_action :require_current_user
+
   def index
     if params[:location_categories]
       @locations =  Location.find_locations(params[:location_categories], params[:address], params[:distance])
@@ -9,13 +11,7 @@ class LocationsController < ApplicationController
 
     def show
       @category = params[:category]
-      @location = Location.find_location(params[:id])
+      @location = Location.location_details(params[:id])
     end
   end
-
-  private
-
-    # def location_params
-    #   params.permit(:location_categories)
-    # end
 end

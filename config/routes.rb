@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'profile',                to: 'users#show'
   get 'search',                 to: "search#index"
   resources :locations,         only: [:index, :show]
+  resources :favorites,         only: [:index, :create]
 end

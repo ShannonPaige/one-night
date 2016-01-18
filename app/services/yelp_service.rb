@@ -10,4 +10,8 @@ class YelpService
                                   limit: 20, radius_filter: distance_in_meters})
                 .businesses.shuffle.first
   end
+
+  def location_details(id)
+    @yelp_client.business(id).business
+  end
 end

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2>Favorites</h2>
+        <% if @favorites.empty? %>
+          <p>You don't have any favorites yet. <a href="/search" >Go find some!</a></p>
+        <% else %>
+          <% @favorites.each do |category, favorite| %>
+            <div class="col-md-4 category_card">
+              <div class="thumbnail">
+                <% if Category.event?(category) %>
+                  <%= render partial: "event_card", locals: {location: location} %>
+                <% else %>
+                  <%= render partial: "yelp_card", locals: {category: category, location: location} %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
