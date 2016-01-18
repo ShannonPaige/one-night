@@ -54,7 +54,13 @@ class ActionController::TestCase
                 :uid => 1234,
                 :oauth_token => "pizza",
                 :oauth_token_secret => "secretpizza")
+    fave = stub(:name => "That Place",
+                :address => "123 Sesame Street",
+                :api_id => 5678,
+                :image_url => "http://image.com",
+                :category => "Things")
     ApplicationController.any_instance.stubs(:current_user).returns(user)
+    ApplicationController.any_instance.stubs(:favorites).returns([fave])
   end
 end
 
