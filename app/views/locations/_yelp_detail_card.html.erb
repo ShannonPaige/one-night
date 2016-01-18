@@ -5,8 +5,10 @@
       <img src="<%= Location.yelp_image_name(@location) %>" alt="<%= @location.name %>">
       <div class="caption">
           <p><%= Location.address(@location) %></p>
-        <p><%= button_to 'Save to Faves', favorites_path(id: @location.id, category: @category),
-                                        {class: "btn btn-primary btn-xs"} %></p>
+          <%= button_to "Save to Faves", favorites_path(id: location.id, category: category,
+                                                        name: location.name, image_url: Location.yelp_image_name(location),
+                                                        address: Location.address(location)),
+                                        {class: "btn btn-primary btn-xs"}  %>
       </div>
     </div>
   </div>

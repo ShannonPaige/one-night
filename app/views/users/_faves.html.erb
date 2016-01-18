@@ -6,13 +6,13 @@
         <% if @favorites.empty? %>
           <p>You don't have any favorites yet. <a href="/search" >Go find some!</a></p>
         <% else %>
-          <% @favorites.each do |category, favorite| %>
+          <% @favorites.each do |location| %>
             <div class="col-md-4 category_card">
               <div class="thumbnail">
-                <% if Category.event?(category) %>
-                  <%= render partial: "event_card", locals: {location: location} %>
+                <% if Category.event?(location.category) %>
+                  <%= render partial: "locations/event_card", locals: {location: location} %>
                 <% else %>
-                  <%= render partial: "yelp_card", locals: {category: category, location: location} %>
+                  <%= render partial: "yelp_fave", locals: {category: location.category, location: location} %>
                 <% end %>
               </div>
             </div>
