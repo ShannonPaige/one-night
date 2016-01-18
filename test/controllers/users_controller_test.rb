@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class UserControllerTest < ActionController::TestCase
+class UsersControllerTest < ActionController::TestCase
   test "should get show" do
-    skip
+    create_user
     get :show
     assert_response :success
   end

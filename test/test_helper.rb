@@ -6,7 +6,7 @@ require "mocha/mini_test"
 require "minitest/pride"
 require "simplecov"
 #require 'webmock'
-require 'vcr'
+#require 'vcr'
 
 SimpleCov.start "rails"
 
@@ -18,6 +18,44 @@ class ActiveSupport::TestCase
   #   config.cassette_library_dir = 'test/cassettes'
   #   config.hook_into :webmock
   # end
+end
+
+class ActionController::TestCase
+  def create_auth_info
+    auth_info = OmniAuth::AuthHash.new({
+                'uid' => '12345',
+                'extra' => { 'raw_info' => { 'name' => 'Shannon', 'screen_name' => 'spaige'}},
+                'credentials' => {'token' => '67', 'secret' => '89' }
+            })
+    SessionsController.any_instance.stubs(:auth_info).returns(auth_info)
+  end
+
+  def stub_omniauth
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      provider: 'twitter',
+      extra: {
+        raw_info: {
+          user_id: "1234",
+          name: "Shannon",
+          screen_name: "spaige",
+        }
+      },
+      credentials: {
+        token: "pizza",
+        secret: "secretpizza"
+      }
+    })
+  end
+
+  def create_user
+    stub_omniauth
+    user = stub(:name => "Shannon",
+                :screen_name => "spaige",
+                :uid => 1234,
+                :oauth_token => "pizza",
+                :oauth_token_secret => "secretpizza")
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
+  end
 end
 
 class ActionDispatch::IntegrationTest
