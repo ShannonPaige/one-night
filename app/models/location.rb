@@ -12,6 +12,7 @@ class Location
         locations[readable_category] = YelpService.new.find_location(category, address, distance_in_meters)
       end
     end
+    # binding.pry
     locations
   end
 

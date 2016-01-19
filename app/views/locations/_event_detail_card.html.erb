@@ -4,7 +4,7 @@
     <div class="thumbnail">
       <img src="<%= location["logo"]["url"] %>" alt="<%= @location["name"]["text"] %>">
       <div class="caption">
-        <p><%= link_to 'Save to Faves', favorites_path(id: location["id"], category: "Event"), {method: post, class: "btn btn-primary btn-xs"} %></p>
+        <p><%= link_to 'Save to Faves', favorites_path(id: location["id"], category: "Event"), {method: :post, class: "btn btn-primary btn-xs"} %></p>
       </div>
     </div>
   </div>

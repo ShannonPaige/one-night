@@ -8,10 +8,10 @@ class LocationsController < ApplicationController
       flash[:error] = "You must choose at least one category."
       redirect_to search_path
     end
+  end
 
     def show
       @category = params[:category]
       @location = Location.location_details(params[:id])
     end
-  end
 end
