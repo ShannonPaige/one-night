@@ -10,6 +10,9 @@ class Location
       else
         readable_category = category.split("_").map(&:capitalize).join(" ").singularize
         locations[readable_category] = YelpService.new.find_location(category, address, distance_in_meters)
+        # readable_category_url = readable_category + "_url"
+        # locations[readable_category].push(readable_category_url => Location.yelp_image_name(locations[readable_category].image_url))
+        # binding.pry
       end
     end
     locations

@@ -12,10 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require fetch_results
 //= require_tree .
 
 $(document).ready(function() {
   findYourNightButton();
+});
+
+
+$body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }
 });

@@ -1,10 +1,8 @@
-<div class="event-card">
-
-  <img src="<%= location["logo"]["url"] %>" alt="<%= location["name"]["text"] %>">
-  <div class="caption">
-    <h5>Event:</h5>
-    <h4><%= truncate(location["name"]["text"], length: 40) %></h4>
-    <p><%= link_to 'Learn More', location_path(id: location["id"], category: "Event"), {class: "btn btn-primary btn-xs"} %>
-      <%= link_to 'Save to Faves', favorites_path(id: location["id"], category: "Event"), {method: :post, class: "btn btn-primary btn-xs"} %></p>
-  </div>
-</div>
+  '<div class="event-card"><img src='
+  + location["logo"]["url"]
+  + '<div class="caption"><h5>Event:</h5><h4>'
+  +  response["name"]["text"]
+  + '</h4><p><a href="/'
+  + response["id"]
+  + '?category=Event'
+  + '" class = "btn btn-primary btn-xs"></div></div>'
