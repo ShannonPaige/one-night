@@ -1,4 +1,4 @@
-class YelpController < ApplicationController
+class ApiController < ApplicationController
   respond_to :json
 
   def index

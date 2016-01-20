@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>Find Your Night</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
@@ -20,5 +19,6 @@
   <%#= render "shared/footer" %>
 </div>
 
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>

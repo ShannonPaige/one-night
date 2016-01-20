@@ -4,7 +4,7 @@ class Location
     locations = {}
     address = Location.default_addess(address)
     distance_in_meters = Location.miles_to_meters(distance)
-    categories.each do |category, v|
+    categories.each do |category|
       if category == "events"
         locations[:Event] = EventbriteService.new.find_event(address, distance)
       else
@@ -12,7 +12,6 @@ class Location
         locations[readable_category] = YelpService.new.find_location(category, address, distance_in_meters)
       end
     end
-    # binding.pry
     locations
   end
 
@@ -21,7 +20,11 @@ class Location
   end
 
   def self.yelp_image_name(location)
-    location.image_url.gsub('ms.jpg', 'o.jpg')
+    if location.image_url
+      location.image_url.gsub('ms.jpg', 'o.jpg')
+    else
+      "http://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c73d296de521/assets/img/default_avatars/business_90_square.png"
+    end
   end
 
   def self.address(location)

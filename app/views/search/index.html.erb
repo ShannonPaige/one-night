@@ -19,7 +19,7 @@
         <%= label_tag('location_categories[museums]', "Museums") %><br />
         <%=check_box_tag 'location_categories[restaurants]'%>
         <%= label_tag('location_categories[restaurants]', "Restaurants") %><br />
-      <%= submit_tag("Find Your Night") %>
+      <%= submit_tag "Find Your Night", {:id=>"find-your-night", :class=>"btn btn-danger"} %>
     <% end %>
   </div>
 </div>

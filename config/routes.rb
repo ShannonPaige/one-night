@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :locations,         only: [:index, :show]
   resources :favorites,         only: [:index, :create]
-  resources :yelp,              only: [:index]
+  resources :api,              only: [:index]
   get 'auth/twitter',                                   as: :login
   get 'auth/twitter/callback',  to: 'sessions#create'
   get 'logout',                 to: 'sessions#destroy', as: :logout
