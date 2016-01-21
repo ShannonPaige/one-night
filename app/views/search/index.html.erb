@@ -8,15 +8,13 @@
       <%= form_tag(locations_path, {method: "get", class: "form-style-8"}) do %>
       <div class="form-group">
         <%= label_tag('address', "What address do you want to be near?") %>
-        <%= text_field_tag('address', nil, class: "form-group") %>
+        <%= text_field_tag('address', @address, class: "form-group") %>
       </div>
         <%= label_tag('distance', "How many miles are you willing to travel?") %>
         <%= select_tag "distance", options_for_select(1..25) %><br />
         <%= label_tag('distance', "What are you looking for?") %><br />
         <%=check_box_tag 'location_categories[bars]'%>
         <%= label_tag('location_categories[bars]', "Bars") %><br />
-        <%#=check_box_tag 'location_categories[cannabis_clinics]'%>
-        <%#= label_tag('location_categories[cannabis_clinics]', "Cannabis Clinics") %>
         <%#=check_box_tag 'location_categories[events]'%>
         <%#= label_tag('location_categories[events]', "Events") %>
         <%=check_box_tag 'location_categories[hotels]'%>
@@ -30,6 +28,8 @@
     </div>
     <div class="row search-results hide">
       <h1>May We Suggest...</h1>
+      <div id="spin-again">
+      </div>
       <div id="results">
       </div>
     </div>

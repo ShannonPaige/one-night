@@ -1,5 +1,11 @@
-function renderSearchResults(response) {
+function renderSearchResults(response, address) {
   $('.search-results').removeClass('hide')
+  $('#spin-again').prepend(
+    '<p><a href="/search?address='
+    + address
+    + '" class="btn btn-danger btn-sm'
+    + '">Want New Results? Try Again! </a></p>'
+  )
   for (key in response) {
     var location = response[key]
     var image = response[key+'_url']

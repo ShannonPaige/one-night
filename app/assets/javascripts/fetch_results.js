@@ -13,8 +13,6 @@ function fetchResults() {
 
   if ($('#location_categories_bars').is(':checked')){
     location_categories.push("bars");}
-  if ($('#location_categories_cannabis_clinics').is(':checked')){
-    location_categories.push("cannabis_clinics");}
   if ($('#location_categories_events').is(':checked')){
     location_categories.push("events");}
   if ($('#location_categories_hotels').is(':checked')){
@@ -33,7 +31,7 @@ function fetchResults() {
     success: function(response) {
       $('.error').addClass('hide')
       $('.search-form').addClass('hide')
-      renderSearchResults(response)
+      renderSearchResults(response, address)
     },
     error: function(xhr) {
       $('.error').removeClass('hide')
