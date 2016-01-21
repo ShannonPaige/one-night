@@ -2,8 +2,6 @@ require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
   test "it can convert a thumbanail filename to full size filename" do
-    skip
-    #TO DO: Move this into services test
     assert_equal "http://someimagename/o.jpg", Location.yelp_image_name("http://someimagename/ms.jpg")
   end
 

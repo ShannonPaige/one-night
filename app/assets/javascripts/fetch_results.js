@@ -31,6 +31,7 @@ function fetchResults() {
     data: { location_categories: location_categories, address: address, distance: distance },
     dataType: 'json',
     success: function(response) {
+      $('.search-form').addClass('hide')
       renderSearchResults(response)
     },
     error: function(xhr) {
@@ -55,21 +56,21 @@ function renderSearchResults(response) {
   }
  }
 
-  function renderEvent(location) {
-    $('#results').prepend(
+function renderEvent(location) {
+  $('#results').prepend(
 
-      '<div class="col-md-2 category_card"><div class="thumbnail">'
-      + '<div class="event-card"><img src="'
-      + location["logo"]["url"]
-      + '"><div class="caption"><h5>Event:</h5><h4>'
-      +  location["name"]["text"]
-      + '</h4><p><a href="/'
-      + location["id"]
-      + '?category=Event'
-      + '" class = "btn btn-primary btn-xs"></div></div></div>'
-    )
-      saveToFavesButton(response);
-    }
+    '<div class="col-md-2 category_card"><div class="thumbnail">'
+    + '<div class="event-card"><img src="'
+    + location["logo"]["url"]
+    + '"><div class="caption"><h5>Event:</h5><h4>'
+    +  location["name"]["text"]
+    + '</h4><p><a href="/'
+    + location["id"]
+    + '?category=Event'
+    + '" class = "btn btn-primary btn-xs"></div></div></div>'
+  )
+    saveToFavesButton(response);
+  }
 
 function renderCard(location, key, image) {
   $('#results').prepend(
@@ -84,23 +85,23 @@ function renderCard(location, key, image) {
     + location["id"]
     + '?category='
     + key
-    + '" class="btn btn-primary btn-xs">Learn More</a><button class="save-to-fave btn btn-primary '
-    + key
+    + '" class="btn btn-danger btn-sm">Learn More</a><br />'
+    + '<button class="save-to-fave btn btn-danger btn-sm'
     +'">Save to Fave</button></p></div></div></div>'
   )
-  saveToFavesButton(location);
+  saveToFavesButton(location, key);
 }
 
-function saveToFavesButton(location) {
+function saveToFavesButton(location, key) {
   $('.save-to-fave').on("click", function(event){
     var button = this;
     event.preventDefault();
-    saveFavorite(location, button);
+    saveFavorite(location, button, key);
     });
 }
 
-function saveFavorite(location, button) {
-  data = {"id": location["id"], "category": location["category"], name: location["name"], "image_url": location["image_url"], "address": location["address"]}
+function saveFavorite(location, button, key) {
+  data = {"id": location["id"], "category": key, name: location["name"], "image_url": location["image_url"], "address": location["address"]}
   $.post('/favorites', data, disableFavoriteButton(button));
 }
 

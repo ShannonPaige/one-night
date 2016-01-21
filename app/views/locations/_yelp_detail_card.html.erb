@@ -2,11 +2,11 @@
 <div class="row">
   <div class="col-md-4 category_card">
     <div class="thumbnail">
-      <img src="<%= Location.yelp_image_name(@location) %>" alt="<%= @location.name %>">
+      <img src="<%= @location.image_url %>" alt="<%= @location.name %>">
       <div class="caption">
           <p><%= Location.address(@location) %></p>
           <%= button_to "Save to Faves", favorites_path(id: @location.id, category: @category,
-                                                        name: @location.name, image_url: Location.yelp_image_name(@location),
+                                                        name: @location.name, image_url: @location.image_url,
                                                         address: Location.address(@location)),
                                         {class: "btn btn-primary btn-xs"}  %>
       </div>

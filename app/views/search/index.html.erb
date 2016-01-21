@@ -1,9 +1,12 @@
-<h1>Let's Get Started</h1>
 <div class="panel panel-default">
   <div class="panel-body">
-    <%= form_tag(locations_path, method: "get") do %>
+    <div class="row search-form">
+      <h1>Let's Get Started....</h1>
+      <%= form_tag(locations_path, {method: "get", class: "form-style-8"}) do %>
+      <div class="form-group">
         <%= label_tag('address', "What address do you want to be near?") %>
-        <%= text_field_tag('address') %><br />
+        <%= text_field_tag('address', nil, class: "form-group") %>
+      </div>
         <%= label_tag('distance', "How many miles are you willing to travel?") %>
         <%= select_tag "distance", options_for_select(1..25) %><br />
         <%= label_tag('distance', "What are you looking for?") %><br />
@@ -19,18 +22,15 @@
         <%= label_tag('location_categories[museums]', "Museums") %><br />
         <%=check_box_tag 'location_categories[restaurants]'%>
         <%= label_tag('location_categories[restaurants]', "Restaurants") %><br />
-      <%= submit_tag "Find Your Night", {:id=>"find-your-night", :class=>"btn btn-danger"} %>
-    <% end %>
-  </div>
-</div>
-<div class="modal"><!-- Place at bottom of page --></div>
-<div class = "search-results hide">
-  <div class="row">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h2>Search Results</h2>
-        <div id="results"></div>
+        <%= submit_tag "Find Your Night", {:id=>"find-your-night", :class=>"btn btn-danger"} %>
+      <% end %>
+    </div>
+    <div class="row search-results hide">
+      <h1>May We Suggest...</h1>
+      <div id="results">
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal"></div>

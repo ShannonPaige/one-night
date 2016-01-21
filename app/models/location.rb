@@ -22,9 +22,9 @@ class Location
     YelpService.new.location_details(id)
   end
 
-  def self.yelp_image_name(location)
-    if location.image_url
-      location.image_url.gsub('ms.jpg', 'o.jpg')
+  def self.yelp_image_name(image_url)
+    if image_url
+      image_url.gsub('/ms.jpg', '/o.jpg')
     else
       "http://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c73d296de521/assets/img/default_avatars/business_90_square.png"
     end
