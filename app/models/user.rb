@@ -11,12 +11,4 @@ class User < ActiveRecord::Base
       new_user.oauth_token_secret = auth_info.credentials.secret
     end
   end
-
-  # def grab_favorites
-  #   user_faves = {}
-  #   self.favorites.each do |favorite|
-  #   end
-  #   user_faves
-  # end
-
 end
