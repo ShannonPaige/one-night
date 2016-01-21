@@ -1,5 +1,5 @@
-class Category
-  def self.event?(category)
-    category == :Event
-  end
-end
+# class Category
+#   def self.event?(category)
+#     category == :Event
+#   end
+# end

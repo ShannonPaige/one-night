@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.find_or_create_from_omniauth(auth_info)
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to search_path
     else
       redirect_to root_path
     end

@@ -1,5 +1,5 @@
 function saveToFavesButton(location, key) {
-  $('.save-to-fave').on("click", function(event){
+  $('.save-to-fave-btn-'+key).on("click", function(event){
     var button = this;
     event.preventDefault();
     saveFavorite(location, button, key);

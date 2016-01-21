@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="panel panel-default">
+    <div class="panel panel-default profile">
       <div class="panel-body">
         <h2>Favorites</h2>
         <a href= "/search" class="btn btn-danger">Find More Favorites</a><br /><br />
@@ -10,11 +10,7 @@
           <% @favorites.each do |location| %>
             <div class="col-md-4 category_card">
               <div class="thumbnail">
-                <% if Category.event?(location.category) %>
-                  <%= render partial: "locations/event_card", locals: {location: location} %>
-                <% else %>
                   <%= render partial: "yelp_fave", locals: {category: location.category, location: location} %>
-                <% end %>
               </div>
             </div>
           <% end %>

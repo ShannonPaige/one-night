@@ -12,12 +12,11 @@ class User < ActiveRecord::Base
     end
   end
 
-  def grab_favorites
-    user_faves = {}
-    self.favorites.each do |favorite|
-      binding.pry
-    end
-    user_faves
-  end
+  # def grab_favorites
+  #   user_faves = {}
+  #   self.favorites.each do |favorite|
+  #   end
+  #   user_faves
+  # end
 
 end

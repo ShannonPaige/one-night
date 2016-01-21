@@ -3,7 +3,7 @@
 <head>
   <title>The page you were looking for is forbidden (403)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
+  <!-- /*<style>
   body {
     background-color: #EFEFEF;
     color: #2E2F30;
@@ -51,17 +51,15 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
-  </style>
+  </style>*/ -->
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>You are trying to access a page you don't have access to.</h1>
-      <p>Please <%= link_to "login", login_path %> to access this page.</p>
+      <h2>Login To Get Started...</h2>
+      <%= link_to 'Login', login_path, {class: "btn btn-danger btn-lg"} %>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>

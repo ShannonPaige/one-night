@@ -32,7 +32,7 @@ function renderEvent(location) {
 
 function renderOther(location, key, image) {
   $('#results').prepend(
-    '<div class="col-md-2 category_card"><div class="thumbnail">'
+    '<div class="col-md-3 category_card"><div class="thumbnail">'
     + '<div class="event-card"><img src="'
     + location["image_url"]
     + '"><div class="caption"><h5>'
@@ -45,7 +45,9 @@ function renderOther(location, key, image) {
     + location["location"]["display_address"][0]
     + '<br />'
     + location["location"]["display_address"][2]
-    + '</p><p class="learn-more hide">'
+    + '</p><p class="learn-more-'
+    + key
+    + ' hide">'
     + location["display_phone"]
     + '<br />Yelp Rating: <img src="'
     + location["rating_img_url"]
@@ -54,17 +56,15 @@ function renderOther(location, key, image) {
     + ' reviews. <br /><a href="'
     + location["url"]
     + ' target="_blank">View on Yelp</a></p>'
-    // + '<p><a href="/locations/'
-    // + location["id"]
-    // + '?category='
-    // + key
-    // + '" class="btn btn-danger btn-sm">Learn More</a></p>'
-    + '<p><button class="learn-more-btn btn btn-danger btn-sm'
-    + '">Learn More</button></p>'
-    + '<p><button class="save-to-fave btn btn-danger btn-sm'
+    + '<p><button class="learn-more-btn-'
+    + key
+    + ' btn btn-danger btn-sm">Learn More</button></p>'
+    + '<p><button class="save-to-fave-btn-'
+    + key
+    + ' btn btn-danger btn-sm'
     + '">Save to Fave</button></p>'
     + '</div></div></div>'
   )
-  learnMoreButton();
+  learnMoreButton(key);
   saveToFavesButton(location, key);
 }

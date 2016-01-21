@@ -1,7 +1,7 @@
-function learnMoreButton() {
-  $('.learn-more-btn').click(function(event){
+function learnMoreButton(key) {
+  $('.learn-more-btn-'+key).click(function(event){
     var button = this;
-    $('.learn-more').toggle("slow");
+    $('.learn-more-'+key).toggle("fast");
     event.preventDefault();
     changeLearnButton(button)
     });
