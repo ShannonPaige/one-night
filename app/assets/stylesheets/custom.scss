@@ -7,6 +7,11 @@ body {
   background-size: cover;
 }
 
+.panel {
+  border: 0px solid transparent;
+  background-color:transparent;
+}
+
 .navbar {
   min-height: 50px;
 }
@@ -89,7 +94,7 @@ font-family: 'Roboto Condensed', sans-serif;
 }
 
 .category_card {
-  height: 290px !important;
+  height: 400px;
   // overflow: scroll;
 }
 
@@ -112,6 +117,12 @@ font-family: 'Roboto Condensed', sans-serif;
 
 .hide {
   display: none;
+}
+
+.error h4{
+  color: red;
+  padding-left: 20px;
+  margin-bottom: -10px;
 }
 
 // .thumbnail.right-caption > img {
@@ -189,12 +200,17 @@ h1, .h1 {
     padding-left: 20px;
 }
 
+.event-card img {
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
 .form-style-8{
     // font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;
     padding: 30px;
     background: #FFFFFF;
-    margin: 50px auto;
+    margin: 0px auto;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
@@ -234,7 +250,7 @@ h1, .h1 {
     background: transparent;
     margin-bottom: 10px;
     font: 16px Arial, Helvetica, sans-serif;
-    height: 45px;
+    height: 20px;
 }
 .form-style-8 textarea{
     resize:none;
@@ -242,11 +258,11 @@ h1, .h1 {
 }
 .form-style-8 input[type="button"],
 .form-style-8 input[type="submit"]{
-    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    background-color: #2CBBBB;
-    border: 1px solid #27A0A0;
+    -moz-box-shadow: inset 0px 1px 0px 0px #9e0202;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #9e0202;
+    box-shadow: inset 0px 1px 0px 0px #9e0202;
+    background-color: #ff0000;
+    border: 1px solid #d4004b;
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
@@ -255,9 +271,13 @@ h1, .h1 {
     padding: 8px 18px;
     text-decoration: none;
     text-transform: uppercase;
+    margin-top: 5px;
+    margin-left: 125px;
 }
 .form-style-8 input[type="button"]:hover,
 .form-style-8 input[type="submit"]:hover {
-    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+    background:linear-gradient(to bottom, #9e0202 5%, #ff0000 100%);
     background-color:#34CACA;
+    margin-top: 5px;
+    margin-left: 125px;
 }
