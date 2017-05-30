@@ -1,9 +1,11 @@
 Find Your Night
 =====================
 
-[Find Your Night on Heroku](https://desolate-earth-9100.herokuapp.com/) 
+[Find Your Night on Heroku](https://desolate-earth-9100.herokuapp.com/)
 
-The Public Data Compiler queries the World Bank Api and displays historical data in a graph. The user can select one or mutliple countries to query and modify the data to query for by selecting options. The user can also view current global GDP levels on a map. 
+Allows the user to search for bars, hotels, museums and restaurants within a
+chosen distance of a specified location. The user can select one or multiple
+categories to query and save results to a personal profile.
 
 ![](https://snag.gy/tk0WPs.jpg)
 
@@ -11,6 +13,7 @@ The Public Data Compiler queries the World Bank Api and displays historical data
 
 * Yelp Api
 * Rails
+* Oauth login with twitter account
 
 ### instructions
 
