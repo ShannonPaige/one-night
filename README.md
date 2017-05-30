@@ -9,7 +9,7 @@ Allows the user to search for bars, hotels, museums and restaurants within a
 chosen distance of a specified location. The user can select one or multiple
 categories to query and save results to a personal profile.
 
-![](https://snag.gy/tk0WPs.jpg)
+![](https://dl.dropboxusercontent.com/u/4260734/find-your-night.png)
 
 ### technical overview
 
