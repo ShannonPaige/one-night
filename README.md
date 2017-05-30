@@ -1,7 +1,7 @@
 Find Your Night
 =====================
 
-[Find Your Night on Heroku](https://desolate-earth-9100.herokuapp.com/)
+[Find Your Night on Heroku](https://find-your-night.herokuapp.com/)
 
 Turing School Project
 
